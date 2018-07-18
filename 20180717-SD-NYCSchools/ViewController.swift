@@ -19,7 +19,7 @@ var offset = 0
 //this is a helper variable that is changed to 1 once the received data array has a length of zero, so we know not to make any more calls. While it's value is zero, getBooks will be called when the user scrolls to the bottom of the table view
 var moreSchools = 0
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate {
     @IBOutlet weak var schoolTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +51,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //corresponding school object for row
+        let school = schoolArray[indexPath.row]
+        
+        //initialize school detail view controller
+        let schoolDVC = SchoolDetailViewController(schoolData: school)
+       
+        //push detail view controller onto the navigation controller
+        self.navigationController?.pushViewController(schoolDVC, animated: true)
+        
+        
+    }
+    
 
     
     override func viewDidLoad() {
@@ -73,24 +87,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
     func getBooks() {
         
-       // activityView.isHidden = false
-        //activityIndicator.startAnimating()
         let schoolsURL = "https://data.cityofnewyork.us/resource/97mf-9njv.json"
         
         //append string for pagination, limit, and order sorting to guarantee the the order of the data is stable, as specified here:https://dev.socrata.com/docs/paging.html
         let schoolsURLSorted = schoolsURL + "?$limit=50&$order=:id&$offset=" + String(offset)
         
-        Alamofire.request(schoolsURLSorted,method: .get,encoding:URLEncoding.queryString).validate(statusCode:200..<300).responseJSON { response in
+       //make the HTTP request using Alamofire framework
+    Alamofire.request(schoolsURLSorted,method: .get,encoding:URLEncoding.queryString).validate(statusCode:200..<300).responseJSON { response in
             
             switch response.result {
                 
             case .success:
                 
-              //  self.activityView.isHidden = true
-              //  self.activityIndicator.stopAnimating()
-                
                 guard let data = response.result.value else{return}
-                    var x = 0
                 
                     if let array = data as?  [Dictionary<String, Any>]
                     {
@@ -117,17 +126,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                     }
                 
                 print("Validation Successful")
-            case .failure(let error):
                 
-               // self.activityView.isHidden = true
-               // self.activityIndicator.stopAnimating()
+            case .failure(let error):
                 
                 let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 //
                 let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
                     print("");
                 }
-                
                 
                 alertController.addAction(action1)
                 self.present(alertController, animated: true, completion: nil)

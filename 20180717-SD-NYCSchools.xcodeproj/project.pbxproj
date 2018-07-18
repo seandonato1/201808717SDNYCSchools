@@ -20,6 +20,8 @@
 		A9672A5220FE89F400997DA1 /* _0180717_SD_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9672A5120FE89F400997DA1 /* _0180717_SD_NYCSchoolsUITests.swift */; };
 		A9CE831020FE8D4800A2955E /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE830F20FE8D4800A2955E /* School.swift */; };
 		A9CE831420FE9DCA00A2955E /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE831320FE9DCA00A2955E /* SchoolTableViewCell.swift */; };
+		A9CE831720FEC47200A2955E /* SchoolDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE831520FEC47200A2955E /* SchoolDetailViewController.swift */; };
+		A9CE831820FEC47200A2955E /* SchoolDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CE831620FEC47200A2955E /* SchoolDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		A9672A5320FE89F400997DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9CE830F20FE8D4800A2955E /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		A9CE831320FE9DCA00A2955E /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		A9CE831520FEC47200A2955E /* SchoolDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewController.swift; sourceTree = "<group>"; };
+		A9CE831620FEC47200A2955E /* SchoolDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolDetailViewController.xib; sourceTree = "<group>"; };
 		B0D0DF063A5331F0CF111335 /* Pods_20180717_SD_NYCSchools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20180717_SD_NYCSchools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2524712A6727C51C713C9B5 /* Pods-20180717-SD-NYCSchoolsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20180717-SD-NYCSchoolsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-20180717-SD-NYCSchoolsUITests/Pods-20180717-SD-NYCSchoolsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC8188AF6CAB3AD822C6423C /* Pods_20180717_SD_NYCSchoolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20180717_SD_NYCSchoolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,8 @@
 				A9672A3520FE89F300997DA1 /* _0180717_SD_NYCSchools.xcdatamodeld */,
 				A9CE830F20FE8D4800A2955E /* School.swift */,
 				A9CE831320FE9DCA00A2955E /* SchoolTableViewCell.swift */,
+				A9CE831520FEC47200A2955E /* SchoolDetailViewController.swift */,
+				A9CE831620FEC47200A2955E /* SchoolDetailViewController.xib */,
 			);
 			path = "20180717-SD-NYCSchools";
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9672A3C20FE89F400997DA1 /* LaunchScreen.storyboard in Resources */,
+				A9CE831820FEC47200A2955E /* SchoolDetailViewController.xib in Resources */,
 				A9672A3920FE89F400997DA1 /* Assets.xcassets in Resources */,
 				A9672A3420FE89F300997DA1 /* Main.storyboard in Resources */,
 			);
@@ -384,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9CE831720FEC47200A2955E /* SchoolDetailViewController.swift in Sources */,
 				A9672A3720FE89F300997DA1 /* _0180717_SD_NYCSchools.xcdatamodeld in Sources */,
 				A9CE831420FE9DCA00A2955E /* SchoolTableViewCell.swift in Sources */,
 				A9672A3120FE89F300997DA1 /* ViewController.swift in Sources */,
